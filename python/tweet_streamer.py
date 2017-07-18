@@ -1,6 +1,10 @@
 from twython import TwythonStreamer, Twython
+import sys
+import os
 
-data_file = open("twitter_info.txt", "r")
+data_file_path = os.path.expanduser(sys.argv[1])
+
+data_file = open(data_file_path, "r")
 data_dict = {}
 for line in data_file:
 	key, val = line.split("=")
